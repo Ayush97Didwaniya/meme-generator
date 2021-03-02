@@ -19,7 +19,8 @@ class CSVIngestor(IngestorInterface):
             path {str} -- path where the csv file exists.
         """
         if not cls.can_ingest(path):
-            raise Exception('cannot ingest exception')
+            raise Exception(f'Problem ingesting .csv file.'
+                            f'Please check for correct format/corrupt file.')
 
         quotes = []
         df = pandas.read_csv(path, header=0)

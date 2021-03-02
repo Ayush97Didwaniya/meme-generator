@@ -19,8 +19,9 @@ class DocxIngestor(IngestorInterface):
             path {str} -- path where the doc file exists.
         """
         if not cls.can_ingest(path):
-            raise Exception('cannot ingest exception')
-
+            raise Exception(f'Problem ingesting .docx file.'
+                f'Please check for correct format/corrupt file.')
+            
         quotes = []
         doc = docx.Document(path)
         for para in doc.paragraphs:

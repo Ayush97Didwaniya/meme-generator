@@ -36,7 +36,7 @@ def generate_meme(path=None, body=None, author=None):
         quote = random.choice(quotes)
     else:
         if author is None:
-            raise Exception('Author Required if Body is Used')
+            raise Exception(f'Invalid Text Input - Author Required if Body is Used.')
         quote = QuoteModel(body, author)
 
     meme = MemeEngine('./tmp')

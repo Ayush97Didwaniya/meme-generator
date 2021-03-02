@@ -20,7 +20,8 @@ class TXTIngestor(IngestorInterface):
             path {str} -- path where the txt file exists.
         """
         if not cls.can_ingest(path):
-            raise Exception('cannot ingest exception')
+            raise Exception(f'Problem ingesting .txt file.'
+                f'Please check for correct format/corrupt file.')
 
         file_ref = open(path, "r", encoding="utf-8-sig")
         quotes = []

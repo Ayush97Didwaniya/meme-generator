@@ -21,12 +21,13 @@ class PDFIngestor(IngestorInterface):
             path {str} -- path where the pdf file exists.
         """
         if not cls.can_ingest(path):
-            raise Exception('cannot ingest exception')
-
+            raise Exception(f'Problem ingesting .pdf file.'
+                f'Please check for correct format/corrupt file.')
+            
         tmp = f'./{random.randint(0,100000000)}.txt'
 
-        # pdftotext = r"C:\xpdf-tools-win-4.03\bin32\pdftotext.exe"
-        # call = subprocess.call(['pdftotext','-layout', path, tmp])
+        #pdftotext = r"C:\xpdf-tools-win-4.03\bin32\pdftotext.exe"
+        #call = subprocess.call([pdftotext, '-layout', path, tmp])
         call = subprocess.call(['pdftotext', path, tmp])
 
         file_ref = open(tmp, "r")

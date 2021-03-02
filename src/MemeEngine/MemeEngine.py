@@ -1,4 +1,4 @@
-"""Engine to crate meme."""
+"""to generate meme by writting text over image."""
 from PIL import Image, ImageDraw, ImageFont
 import random
 

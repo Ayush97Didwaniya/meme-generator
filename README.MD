@@ -11,6 +11,20 @@ To run the application first we need to install dependencies, go to root folder 
 ```bash
 pip install -r requirements.txt
 ```
+
+pdftotext may not be installed on your local machine (Mac or Windows). If this is the case, you can install using the open source [XpdfReader utility](https://www.xpdfreader.com/pdftotext-man.html)
+
+In QuoteEngine/PDFIngestor.py file -
+```bash
+call = subprocess.call(['pdftotext', path, tmp]) 
+```
+if above function doesnt work then use below code instead of above calling function:
+```bash
+pdftotext = r"C:\xpdf-tools-win-4.03\bin32\pdftotext.exe"
+call = subprocess.call(['pdftotext','-layout', path, tmp])
+```
+where pdftotext will define path of 'pdftotext.exe' file.
+
 ## Project run
 - To run the project through command line. go to src folder and run below command to generate meme's.
 ```bash 

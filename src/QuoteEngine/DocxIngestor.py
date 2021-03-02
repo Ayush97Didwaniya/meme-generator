@@ -18,7 +18,6 @@ class DocxIngestor(IngestorInterface):
         Arguments:
             path {str} -- path where the doc file exists.
         """
-        print(path)
         if not cls.can_ingest(path):
             raise Exception('cannot ingest exception')
 

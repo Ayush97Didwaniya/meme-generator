@@ -19,6 +19,5 @@ class Ingestor(IngestorInterface):
         """Read the file and Parse the data."""
         for importer in cls.importers:
             if importer.can_ingest(path):
-                print(importer)
                 return importer.parse(path)
         return []

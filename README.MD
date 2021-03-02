@@ -12,11 +12,26 @@ To run the application first we need to install dependencies, go to root folder 
 pip install -r requirements.txt
 ```
 ## Project run
-To run the project through command line. go to src folder and run below command to generate meme's.
+- To run the project through command line. go to src folder and run below command to generate meme's.
 ```bash 
 Python3 meme.py
 ```
+you can provide three optional CLI arguments:
+```bash 
+--body a string quote body
+--author a string quote author
+--path an image path
+```
 The output will come in './tmp' directory.
+
+- To serve the application on browser you need to run app.py
+```bash 
+Python3 app.py
+```
+It will show you url on which application is running.<br />
+after hitting the url, It will show you 'random' named button to generate a new meme. <br />
+User can add its custom meme by doing manual entry on create meme form. <br />
+once user click on create meme it will generate customized meme.
 
 ## Submodule description
 #### - Quote Engine

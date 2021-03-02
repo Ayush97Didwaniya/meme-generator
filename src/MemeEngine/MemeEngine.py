@@ -1,5 +1,6 @@
 """Engine to crate meme."""
 from PIL import Image, ImageDraw, ImageFont
+import random
 
 
 class MemeEngine():
@@ -26,15 +27,17 @@ class MemeEngine():
             height = int(ratio*float(img.height))
             img = img.resize((width, height))
 
+        img = img.convert('RGB')
         message = text + ' - ' + author
         if text is not None:
             draw = ImageDraw.Draw(img)
             font = ImageFont.truetype('./fonts/LilitaOne-Regular.ttf', size=20)
             draw.text((10, 30), message, font=font, fill='white')
 
-        fileName = self.outPath + '/output.jpg'
+        outputfile = f'/{random.randint(0,100000000)}.jpg'
+        filePath = self.outPath + outputfile
         try:
-            img.save(fileName)
+            img.save(filePath)
         except ValueError:
             print(ValueError)
-        return self.outPath
+        return filePath

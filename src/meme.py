@@ -20,10 +20,8 @@ def generate_meme(path=None, body=None, author=None):
         for root, dirs, files in os.walk(images):
             imgs = [os.path.join(root, name) for name in files]
 
-        print('asdas', imgs)
         img = random.choice(imgs)
     else:
-        print('asd', path)
         img = path[0]
 
     if body is None:
@@ -62,5 +60,5 @@ if __name__ == "__main__":
     try:
         args = parser.parse_args()
     except Exception:
-        print(" command line param  not parsed")
+        print("command line param not parsed")
     print(generate_meme(args.path, args.body, args.author))

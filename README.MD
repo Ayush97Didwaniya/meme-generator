@@ -59,11 +59,9 @@ The Meme Engine Module is responsible for manipulating and drawing text onto ima
 ## Depedencies description
 
 Below listed dependencies used in project.
- - mypy :  To check if code is respecting the type hints.
  - pandas : a fast and easy to use datastructure for tabular data.
  - Pillow : Offers features to work with graphics and has interfaces for filtering, resizing, and drawing onto the images (including drawing text!)
- - pycodestyle : Utility to fix the indicated style violations. pycodestyle is a tool to check your Python code against some of the style conventions in PEP 8.
- - pydocstyle :  is a static analysis tool for checking compliance with Python docstring conventions.
- - pylint : Pylint is a Python static code analysis tool which looks for programming errors, helps enforcing a coding standard, sniffs for code smells and offers simple refactoring suggestions.
  - requests : Requests allows you to send HTTP/1.1 requests extremely easily. 
  - Flask : Flask is a lightweight WSGI web application framework. It is designed to make getting started quick and easy, with the ability to scale up to complex applications.
+ - Python-docx : we need to install the python-docx library to work with word documents in Python. 
+ - setuptools : python-docx library requires a new version of a Python helper module called setuptools.

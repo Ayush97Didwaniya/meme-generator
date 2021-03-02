@@ -1,3 +1,4 @@
+"""It generates the meme."""
 import os
 import random
 import argparse
@@ -5,6 +6,7 @@ import argparse
 # @TODO Import your Ingestor and MemeEngine classes
 from QuoteEngine import Ingestor
 from QuoteEngine import QuoteModel
+from MemeEngine import MemeEngine
 
 
 def generate_meme(path=None, body=None, author=None):
@@ -18,8 +20,10 @@ def generate_meme(path=None, body=None, author=None):
         for root, dirs, files in os.walk(images):
             imgs = [os.path.join(root, name) for name in files]
 
+        print('asdas', imgs)
         img = random.choice(imgs)
     else:
+        print('asd', path)
         img = path[0]
 
     if body is None:
@@ -49,14 +53,14 @@ if __name__ == "__main__":
     # author - quote author to add to the image
     parser = argparse.ArgumentParser(description="/pass image path,Quote " +
                                      "body, Quote author")
-    parser.add_argument("path", type=str,
+    parser.add_argument("--path", type=str, default=None,
                         help="path of image file")
-    parser.add_argument("body", type=str,
+    parser.add_argument("--body", type=str, default=None,
                         help="body of quote")
-    parser.add_argument("author", type=str,
+    parser.add_argument("--author", type=str, default=None,
                         help="author of quote")
-    args = parser.parse_args()
-    name = args.name
-    city = args.city
-
+    try:
+        args = parser.parse_args()
+    except Exception:
+        print(" command line param  not parsed")
     print(generate_meme(args.path, args.body, args.author))

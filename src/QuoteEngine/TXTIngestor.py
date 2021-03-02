@@ -7,8 +7,8 @@ from .IngestorInterface import IngestorInterface
 from .QuoteModel import QuoteModel
 
 
-class TXTImporter(IngestorInterface):
-    """TXTImporter Strategy Class for txt file read and data parse."""
+class TXTIngestor(IngestorInterface):
+    """TXTIngestor Strategy Class for txt file read and data parse."""
 
     allowed_extensions = ['txt']
 
@@ -17,7 +17,7 @@ class TXTImporter(IngestorInterface):
         """Read the file and parse the data.
 
         Arguments:
-            path {str} -- path where the pdf file exists.
+            path {str} -- path where the txt file exists.
         """
         if not cls.can_ingest(path):
             raise Exception('cannot ingest exception')
@@ -26,10 +26,8 @@ class TXTImporter(IngestorInterface):
         quotes = []
 
         for line in file_ref.readlines():
-            print("1", line)
             line = line.strip('\n\r').strip()
             if len(line) > 0:
-                print("2", line)
                 parse = line.split(' - ')
                 new_Quote = QuoteModel(parse[0], parse[1])
                 quotes.append(new_Quote)

@@ -8,8 +8,8 @@ from .IngestorInterface import IngestorInterface
 from .QuoteModel import QuoteModel
 
 
-class PDFImporter(IngestorInterface):
-    """PDFImporter Strategy Class for pdf file read and data parse."""
+class PDFIngestor(IngestorInterface):
+    """PDFIngestor Strategy Class for pdf file read and data parse."""
 
     allowed_extensions = ['pdf']
 
@@ -25,7 +25,7 @@ class PDFImporter(IngestorInterface):
 
         pdftotext = r"C:\xpdf-tools-win-4.03\bin32\pdftotext.exe"
         tmp = f'./{random.randint(0,100000000)}.txt'
-        call = subprocess.call([pdftotext, path, tmp])
+        call = subprocess.call([pdftotext, '-layout', path, tmp])
 
         file_ref = open(tmp, "r")
         quotes = []

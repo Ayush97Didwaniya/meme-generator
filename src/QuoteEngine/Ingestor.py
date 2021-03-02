@@ -3,16 +3,16 @@ from typing import List
 
 from .IngestorInterface import IngestorInterface
 from .QuoteModel import QuoteModel
-from .DocxImporter import DocxImporter
-from .CSVImporter import CSVImporter
-from .TXTImporter import TXTImporter
-from .PDFImporter import PDFImporter
+from .DocxIngestor import DocxIngestor
+from .CSVIngestor import CSVIngestor
+from .PDFIngestor import PDFIngestor
+from .TXTIngestor import TXTIngestor
 
 
 class Ingestor(IngestorInterface):
     """Calls the helper class & parse the file according to file type."""
 
-    importers = [DocxImporter, CSVImporter, TXTImporter, PDFImporter]
+    importers = [DocxIngestor, CSVIngestor, TXTIngestor, PDFIngestor]
 
     @classmethod
     def parse(cls, path: str) -> List[QuoteModel]:

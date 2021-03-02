@@ -6,8 +6,8 @@ from .IngestorInterface import IngestorInterface
 from .QuoteModel import QuoteModel
 
 
-class CSVImporter(IngestorInterface):
-    """CSVImporter Strategy Class for csv file read and data parse."""
+class CSVIngestor(IngestorInterface):
+    """CSVIngestor Strategy Class for csv file read and data parse."""
 
     allowed_extensions = ['csv']
 
@@ -25,7 +25,7 @@ class CSVImporter(IngestorInterface):
         df = pandas.read_csv(path, header=0)
 
         for index, row in df.iterrows():
-                new_Quote = QuoteModel(row['body'], row['author'])
-                quotes.append(new_Quote)
+            new_Quote = QuoteModel(row['body'], row['author'])
+            quotes.append(new_Quote)
 
         return quotes

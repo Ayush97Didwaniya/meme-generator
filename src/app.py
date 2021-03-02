@@ -4,6 +4,7 @@ import requests
 from flask import Flask, render_template, abort, request
 
 # @TODO Import your Ingestor and MemeEngine classes
+from MemeEngine import MemeEngine
 
 app = Flask(__name__)
 
@@ -11,7 +12,7 @@ meme = MemeEngine('./static')
 
 
 def setup():
-    """ Load all resources. """
+    """Load all resources."""
 
     quote_files = ['./_data/DogQuotes/DogQuotesTXT.txt',
                    './_data/DogQuotes/DogQuotesDOCX.docx',

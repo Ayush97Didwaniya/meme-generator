@@ -13,7 +13,6 @@ class IngestorInterface(ABC):
     def can_ingest(cls, path: str) -> bool:
         """To check if parser available for particular file type."""
         ext = path.split('.')[-1]
-        print("ext", ext)
         return ext in cls.allowed_extensions
 
     @classmethod

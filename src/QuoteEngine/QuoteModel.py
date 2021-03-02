@@ -16,4 +16,4 @@ class QuoteModel():
 
     def __repr__(self):
         """Return Quote with author name."""
-        return f'<"{self.body}" - {self.author}>'
+        return f'<{self.body}-{self.author}>'

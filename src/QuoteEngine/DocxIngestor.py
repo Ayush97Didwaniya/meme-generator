@@ -6,8 +6,8 @@ from .IngestorInterface import IngestorInterface
 from .QuoteModel import QuoteModel
 
 
-class DocxImporter(IngestorInterface):
-    """DocxImporter Strategy Class for doc file read and data parse."""
+class DocxIngestor(IngestorInterface):
+    """DocxIngestor Strategy Class for doc file read and data parse."""
 
     allowed_extensions = ['docx']
 
